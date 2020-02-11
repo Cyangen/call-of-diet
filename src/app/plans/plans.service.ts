@@ -35,7 +35,7 @@ export class PlansService {
       ]
     ),
       new Plan(
-      'p2',
+      'p3',
       'detox',
       [
         {lunch : 'tonno e insalata1', dinner: 'pasta di legumi1'},
@@ -51,6 +51,10 @@ export class PlansService {
 
   get plans() {
     return [...this._plans];
+  }
+
+  getPlan(id: string) {
+    return {...this._plans.find(p => p.id === id)};
   }
 
   constructor() { }

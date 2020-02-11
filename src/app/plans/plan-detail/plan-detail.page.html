@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>plan-detail</ion-title>
+    <ion-title>{{ plan.name }}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -8,5 +8,25 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-slides pager="false">
+          <ion-slide *ngFor="let meal of plan.meals">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>Pranzo</ion-card-subtitle>
+                <ion-card-title>{{ meal.lunch}}</ion-card-title>
+              </ion-card-header>
 
+              <ion-card-header>
+                <ion-card-subtitle>Cena</ion-card-subtitle>
+                <ion-card-title>{{ meal.dinner}}</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
