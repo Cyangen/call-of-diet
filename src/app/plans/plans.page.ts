@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlansService } from './plans.service';
+import { Plan } from './plans.model';
 
 @Component({
   selector: 'app-plans',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plans.page.scss'],
 })
 export class PlansPage implements OnInit {
+  loadedPlans: Plan[];
 
-  constructor() { }
+  constructor(private plansServie: PlansService) { }
 
   ngOnInit() {
+    this.loadedPlans = this.plansServie.plans;
   }
 
 }
